@@ -10,14 +10,31 @@
   margin-top: auto;
   column-gap: 6px;
   row-gap: 10px;
+
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 450px;
 }
 
 textarea {
-  width: 800px;
+  width: 750px;
   height: 150px;
-  margin-bottom: 50px;
+  /* margin-bottom: 5px; */
   font-size: 18px;
 }
+
+.description {
+  width: 750px;
+  color: rgb(94, 94, 94);
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+  margin-bottom: 25px;
+}
+
 
 p {
   margin: 0;
@@ -40,7 +57,7 @@ p {
   box-sizing: border-box;
 }
 
-.button:active, .button.active {
+.button.active {
   background-color: rgb(143, 155, 183);
 }
 

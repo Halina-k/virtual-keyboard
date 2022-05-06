@@ -1,9 +1,26 @@
 import "./css/style.css"
+import letters from "./object.js"
+
+
 
 const wrapper = document.getElementById('wrapper')
 const textarea =  document.createElement('textarea');
+const divDesc = document.createElement('div');
+divDesc.className = 'description'
+divDesc.innerHTML = 'Клавиатура создана в macOS. Переключение языковой раскладки Cmd + Space';
 wrapper.append(textarea);
+wrapper.append(divDesc);
 
+
+window.addEventListener('load', function() {
+	textarea.focus();
+});
+
+
+function setFocus(){
+  console.log('wwww')
+  textarea.focus();
+}
 
 
 function createButton(configBtn, container = null) {
@@ -11,7 +28,6 @@ function createButton(configBtn, container = null) {
   div.className = 'button'
   div.style.width = configBtn.width;
   div.id = configBtn.code
-  // container.append(div);
 
   const divForUp = document.createElement('div');
   divForUp.innerHTML = configBtn.letterUp;
@@ -21,221 +37,80 @@ function createButton(configBtn, container = null) {
   divForDown.innerHTML = configBtn.letterDown;
   div.append(divForDown);
 
-
-
   return div;
 }
-
-let letters = [
-  {
-    letterUp: '',
-    letterDown: '~',
-    code: 'IntlBackslash',
-    width: '45px'
-  },
-  {
-    letterUp: '!',
-    letterDown: '1',
-    code: 'Digit1',
-    width: '45px'
-  },
-  {
-    letterUp: '@',
-    letterDown: '2',
-    code: 'Digit2',
-    width: '45px'
-  },
-  {
-    letterUp: '#',
-    letterDown: '3',
-    code: 'Digit3',
-    width: '45px'
-  },
-  {
-    letterUp: '$',
-    letterDown: '4',
-    code: 'Digit4',
-    width: '45px'
-  },
-  {
-  letterUp: '$',
-  letterDown: '5',
-  code: 'Digit5',
-  width: '45px'
-},
-{
-  letterUp: '^',
-  letterDown: '6',
-  code: 'Digit6',
-  width: '45px'
-},
-{
-  letterUp: '&',
-  letterDown: '7',
-  code: 'Digit7',
-  width: '45px'
-},
-{
-  letterUp: '*',
-  letterDown: '8',
-  code: 'Digit8',
-  width: '45px'
-},
-{
-  letterUp: '(',
-  letterDown: '9',
-  code: 'Digit9',
-  width: '45px'
-},
-{
-  letterUp: ')',
-  letterDown: '0',
-  code: 'Digit0',
-  width: '45px'
-},
-{
-  letterUp: '_',
-  letterDown: '-',
-  code: 'Minus',
-  width: '45px'
-},
-{
-  letterUp: '+',
-  letterDown: '=',
-  code: 'Equal',
-  width: '45px'
-},
-{
-  letterUp: 'delete',
-  letterDown: '',
-  code: 'Backspace',
-  width: '87px'
-},
-{
-  letterUp: 'tab',
-  letterDown: '',
-  code: 'Tab',
-  width: '87px'
-},
-{
-  letterUp: 'Q',
-  letterDown: '',
-  code: 'KeyQ',
-  width: '45px'
-},
-{
-  letterUp: 'W',
-  letterDown: '',
-  code: 'KeyW',
-  width: '45px'
-},
-{
-  letterUp: 'E',
-  letterDown: '',
-  code: 'KeyE',
-  width: '45px'
-},
-{
-  letterUp: 'R',
-  letterDown: '',
-  code: 'KeyR',
-  width: '45px'
-},
-{
-  letterUp: 'T',
-  letterDown: '',
-  code: 'KeyT',
-  width: '45px'
-},
-{
-  letterUp: 'Y',
-  letterDown: '',
-  code: 'KeyY',
-  width: '45px'
-},
-{
-  letterUp: 'U',
-  letterDown: '',
-  code: 'KeyU',
-  width: '45px'
-},
-{
-  letterUp: 'I',
-  letterDown: '',
-  code: 'KeyI',
-  width: '45px'
-},
-{
-  letterUp: 'O',
-  letterDown: '',
-  code: 'KeyO',
-  width: '45px'
-},
-{
-  letterUp: 'P',
-  letterDown: '',
-  code: 'KeyP',
-  width: '45px'
-},
-{
-  letterUp: '{',
-  letterDown: '[',
-  code: 'BracketLeft',
-  width: '45px'
-},
-{
-  letterUp: '}',
-  letterDown: ']',
-  code: 'BracketRight',
-  width: '45px'
-},
-{
-  letterUp: '|',
-  letterDown: '\\',
-  code: 'Backslash',
-  width: '45px'
-},
-
-
-
-
-]
 
 letters.forEach(value => wrapper.append(createButton(value)))
 
 
-
-
-// function mouseupButton(event) {
-//   let target = event.target.closest('.button');
-//   target.classList.remove('active');
-//   textarea.innerHTML = 'h';
-
-// }
-
-function mousedownButton(event) {
-  let target = event.target.closest('.button');
-  textarea.innerHTML += target.textContent;
+let currentState = {
+ Shift: false,
+ Control: false,
+ Alt: false,
+ Meta: false,
+ CapsLock: false,
 }
 
+// //////////////////////////////////////////// ИМИТИРУЕМ НАЖАТИЕ КНОПКИ ПРИ КЛИКЕ НА ВИРТ КЛАВ
+function mousedownButton(event) {
+  console.log("mousedownButton")
+  let target = event.target.closest('.button');
+  event.preventDefault();
 
-// wrapper.addEventListener('mouseup', mouseupButton)]
+  target.classList.add('active')
+
+  let keyboardValue = {
+    code: target.id,
+    key: target.id.slice(-1).toLowerCase(),
+  }
+
+  let keydEvent = new KeyboardEvent('keydown', keyboardValue)
+  window.dispatchEvent(keydEvent);
+
+  setFocus()
+}
+
 wrapper.addEventListener('mousedown', mousedownButton)
 
 
+
+
+function mouseupButton(event) {
+  let target = event.target.closest('.button');
+  target.classList.remove('active')
+}
+
+wrapper.addEventListener('mouseup', mouseupButton)
+
+
+
+
 function keydownBtn (event) {
-  console.log(event.code)
+
+  
+  event.preventDefault();
+  setFocus()
+  textarea.value += event.key;
+  console.log(event.key)
   let letter = event.code
   document.getElementById(`${letter}`).classList.add('active')
 }
+
+addEventListener('keydown', keydownBtn)
+
+
+
 
 function keyupBtn (event) {
   let letter = event.code
   document.getElementById(`${letter}`).classList.remove('active')
 }
 
-addEventListener('keydown', keydownBtn)
+
 addEventListener('keyup', keyupBtn)
+
+
+
 
 
 
