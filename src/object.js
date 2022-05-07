@@ -30,7 +30,7 @@ let letters = [
     width: '45px'
   },
   {
-    letterUp: '$',
+    letterUp: '%',
     letterDown: '5',
     code: 'Digit5',
     width: '45px'
@@ -79,7 +79,7 @@ let letters = [
   },
   {
     letterUp: '',
-    letterDown: 'delete',
+    letterDown: 'backspace',
     code: 'Backspace',
     width: '87px'
   },
