@@ -101,10 +101,59 @@ p {
 } */
 
 
-.upper .button.letter .divForDown{
+/* .upper .button.letter .divForDown{
   text-transform: uppercase;
+} */
+
+.button .divForUp {
+  display: none;
 }
 
+.upper .button .divForDown {
+  display: none;
+}
+
+.upper .button .divForUp {
+  display: block;
+}
+
+.letterDownRu {
+  display: none;
+}
+
+.keyboard {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 6px;
+  row-gap: 10px;
+}
+
+
+/* #wrapper {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: auto;
+  column-gap: 6px;
+  row-gap: 10px;
+
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 450px;
+}
+
+ */
 
 
 
