@@ -28,6 +28,9 @@ function createButton(configBtn, container = null) {
   div.className = 'button'
   div.style.width = configBtn.width;
   div.id = configBtn.code
+  if (div.id.slice(0, 3) === 'Key') {
+    div.classList.add("letter")
+  }
 
   const divForUp = document.createElement('div');
   divForUp.className = 'divForUp'
@@ -56,6 +59,20 @@ let currentState = {
   ShiftRight: false,
 }
 
+function upCase() {
+  if (currentState.CapsLock === true || currentState.ShiftLeft === true || currentState.ShiftRight === true) {
+    document.getElementById('wrapper').classList.add("upper")
+  } else {
+    document.getElementById('wrapper').classList.remove("upper")
+  }
+}
+
+
+
+
+
+
+
 
 
 
@@ -67,7 +84,6 @@ let keyboardValue = {}
 function mousedownButton(event) {
   let target = event.target.closest('.button');
   event.preventDefault();
-  console.log(target.id)
 
   let key
   if (currentState.ShiftLeft === true || currentState.ShiftRight === true) {
@@ -78,7 +94,8 @@ function mousedownButton(event) {
     }
   } else if (currentState.CapsLock === true && target.id.slice(0, 3) === 'Key') {
     key = target.querySelector(".divForDown").textContent.toUpperCase()
-  }  else {
+  }  
+  else {
     key = target.querySelector(".divForDown").textContent
   }
 
@@ -118,8 +135,8 @@ wrapper.addEventListener('mouseup', mouseupButton)
 
 
 function keydownBtn (event) {
+
   setFocus()
-  console.log(event)
 
   if (event.code !== 'CapsLock') {
     event.preventDefault();
@@ -128,12 +145,28 @@ function keydownBtn (event) {
   if(Object.keys(currentState).includes(event.code)) {
      currentState[event.code] = true
   }
-  console.log(currentState.CapsLock)
+
+  console.log( currentState[event.code])
+  console.log(currentState)
+
+  // if (currentState.CapsLock === true || currentState.ShiftLeft === true || currentState.ShiftRight === true) {
+  //   document.getElementById('wrapper').classList.add("upper")
+  // } 
+
+  upCase()
+
+
 
   if (event.code === 'Backspace') {
     textarea.value = textarea.value.slice(0, -1)
   } else if (event.code === "Tab") {
     textarea.value += "\t";
+  } else if (event.code.slice(0, 3) === 'Key') {
+    if (currentState.CapsLock === true) {
+      textarea.value += event.key.toUpperCase();
+    } else {
+      textarea.value += event.key.toLowerCase();
+    }
   } else if (event.code === "Enter") {
     textarea.value += "\n";
   } else if (event.code === "ArrowUp") {
@@ -158,19 +191,25 @@ addEventListener('keydown', keydownBtn)
 
 
 
+
+
+
 function keyupBtn(event) {
   event.preventDefault();
-  console.log("keyupBtn ", event)
+
   if(Object.keys(currentState).includes(event.code)) {
     currentState[event.code] = false
   }
-  console.log(currentState.CapsLock)
 
+  upCase()
   document.getElementById(`${event.code}`).classList.remove('active')
 }
 
 
 addEventListener('keyup', keyupBtn)
+
+
+
 
 
 

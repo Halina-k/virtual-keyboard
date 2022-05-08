@@ -49,6 +49,8 @@ p {
   align-items: center;
   flex-direction: column;
   border-radius: 3px;
+  animation-duration: 0.3s;
+  animation-name: move-to-button;
 }
 
 .button:hover {
@@ -59,6 +61,32 @@ p {
 
 .button.active {
   background-color: rgb(143, 155, 183);
+  border-radius: 25px;
+  animation-duration: 0.3s;
+  animation-name: move-to-active;
+}
+
+/* @keyframes move {
+  from {border-radius: 15px;}
+  to {border-radius: 3px;}
+} */
+
+@keyframes move-to-active {
+  from {border-radius: 3px;
+    background-color: rgb(199, 198, 198);
+  }
+  to {border-radius: 25px;
+    background-color: rgb(143, 155, 183);
+  }
+}
+
+@keyframes move-to-button {
+  from {border-radius: 25px;
+    background-color: rgb(143, 155, 183);
+  }
+  to {border-radius: 3px;
+    background-color: rgb(199, 198, 198);
+  }
 }
 
 .button div {
@@ -71,6 +99,11 @@ p {
   color: rgb(50, 50, 50);
   font-size: 16px;
 } */
+
+
+.upper .button.letter .divForDown{
+  text-transform: uppercase;
+}
 
 
 
