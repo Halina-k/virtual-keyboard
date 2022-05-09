@@ -1,0 +1,170 @@
+#wrapper {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: auto;
+  column-gap: 6px;
+  row-gap: 10px;
+
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 450px;
+}
+
+textarea {
+  width: 750px;
+  height: 150px;
+  /* margin-bottom: 5px; */
+  font-size: 18px;
+  overflow-y: scroll;
+}
+
+.description {
+  width: 750px;
+  color: rgb(94, 94, 94);
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+  margin-bottom: 25px;
+}
+
+
+p {
+  margin: 0;
+}
+
+.button {
+  /* width: 55px; */
+  height: 45px;
+  background-color: rgb(199, 198, 198);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 3px;
+  animation-duration: 0.3s;
+  animation-name: move-to-button;
+}
+
+.button:hover {
+  border: 1px solid rgb(120, 120, 120);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.button.active {
+  background-color: rgb(143, 155, 183);
+  border-radius: 25px;
+  animation-duration: 0.3s;
+  animation-name: move-to-active;
+}
+
+@keyframes move {
+  from {border-radius: 15px;}
+  to {border-radius: 3px;}
+}
+
+@keyframes move-to-active {
+  from {border-radius: 3px;
+    background-color: rgb(199, 198, 198);
+  }
+  to {border-radius: 25px;
+    background-color: rgb(143, 155, 183);
+  }
+}
+
+@keyframes move-to-button {
+  from {border-radius: 25px;
+    background-color: rgb(143, 155, 183);
+  }
+  to {border-radius: 3px;
+    background-color: rgb(199, 198, 198);
+  }
+}
+
+.button div {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+  color: rgb(34, 34, 34);
+}
+
+/* .button div:first-child {
+  color: rgb(50, 50, 50);
+  font-size: 16px;
+} */
+
+
+/* .upper .button.letter .divForDown{
+  text-transform: uppercase;
+} */
+
+.button .divForUp {
+  display: none;
+}
+
+.upper .button .divForDown {
+  display: none;
+}
+
+.upper .button .divForUp {
+  display: block;
+}
+/* для работы капслока */
+.caps .button.capslock .divForUp {
+  display: block;
+}
+
+.caps .button.capslock .divForDown {
+  display: none;
+}
+
+.letterDownRu {
+  display: none;
+}
+
+.keyboard {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 6px;
+  row-gap: 10px;
+}
+
+
+/* #wrapper {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: auto;
+  column-gap: 6px;
+  row-gap: 10px;
+
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 450px;
+}
+
+ */
+
+
+
+
+
