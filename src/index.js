@@ -2,7 +2,7 @@ import './css/style.css'
 
 import letters from './lettersVocabulary'
 import KeyboardState from './KeyboardState';
-import createButton from './CreateButton';
+import { createButton, updateButton } from './CreateButton';
 
 const wrapper = document.createElement('div');
 wrapper.id = 'wrapper';
@@ -34,8 +34,11 @@ window.addEventListener('load', () => {
 function switchLang() {
   KeyboardState.switchLanguage();
 
-  document.querySelector('.keyboard').innerHTML = ''
-  letters.forEach((value) => keyboard.append(createButton(value, KeyboardState.language)))
+  letters.forEach((value) => updateButton(value, KeyboardState.language))
+
+  if (KeyboardState.isCapsEnabled()) {
+    document.getElementById('CapsLock').classList.add('active')
+  }
 
   textarea.focus();
 }
@@ -84,20 +87,14 @@ function mousedownButton(event) {
 
 wrapper.addEventListener('mousedown', mousedownButton)
 
-function mouseupButton(event) {
-  const target = event.target.closest('.button');
-
-  if (!target) {
-    return false;
-  }
-
+function mouseupButton() {
   if (keyboardValue.code !== 'CapsLock') {
     const keydEventUp = new KeyboardEvent('keyup', keyboardValue)
     window.dispatchEvent(keydEventUp);
   }
   return true;
 }
-wrapper.addEventListener('mouseup', mouseupButton)
+window.addEventListener('mouseup', mouseupButton)
 
 // ////////////////////////////// ОБРАБОТКА КЛИКА ПО КНОПКЕ, И ВИРТУАЛЬНОГО И РЕАЛЬНОГО
 function keydownBtn(event) {
@@ -105,6 +102,9 @@ function keydownBtn(event) {
   if (!document.getElementById(event.code)) {
     return false
   }
+
+  document.getElementById(event.code).classList.add('active')
+
   // // Смена языка
   if (event.getModifierState('Alt') && event.getModifierState('Control')) {
     switchLang()
@@ -152,7 +152,6 @@ function keydownBtn(event) {
     textarea.value += letter;
   }
 
-  document.getElementById(event.code).classList.add('active')
   return true
 }
 

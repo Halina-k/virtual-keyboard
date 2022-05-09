@@ -1,4 +1,4 @@
-function createButton(configBtn, currentLang) {
+export function createButton(configBtn, currentLang) {
   const letterTitles = configBtn[currentLang];
 
   const div = document.createElement('div');
@@ -22,4 +22,20 @@ function createButton(configBtn, currentLang) {
   return div;
 }
 
-export default createButton
+export function updateButton(configBtn, currentLang) {
+  const letterTitles = configBtn[currentLang];
+
+  const button = document.getElementById(configBtn.code);
+
+  button.classList.remove('capslock');
+
+  if (letterTitles.capslock === true) {
+    button.classList.add('capslock')
+  }
+
+  const divForUp = button.querySelector('.divForUp');
+  divForUp.innerHTML = letterTitles.letterUp;
+
+  const divForDown = button.querySelector('.divForDown');
+  divForDown.innerHTML = letterTitles.letterDown;
+}

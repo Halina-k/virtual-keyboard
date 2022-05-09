@@ -67,10 +67,10 @@ p {
   animation-name: move-to-active;
 }
 
-/* @keyframes move {
+@keyframes move {
   from {border-radius: 15px;}
   to {border-radius: 3px;}
-} */
+}
 
 @keyframes move-to-active {
   from {border-radius: 3px;
