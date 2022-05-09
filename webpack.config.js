@@ -11,9 +11,7 @@ module.exports = {
   
   plugins: [ 
     new HtmlWebpackPlugin({
-      title: "RSS Webpack",
-      filename: "index.html",
-      template: "./src/index.html"
+      title: "RSS Webpack"
     }),
 
     // new ESLintPlugin()

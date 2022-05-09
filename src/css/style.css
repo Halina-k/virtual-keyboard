@@ -25,6 +25,7 @@ textarea {
   height: 150px;
   /* margin-bottom: 5px; */
   font-size: 18px;
+  overflow-y: scroll;
 }
 
 .description {
@@ -115,6 +116,14 @@ p {
 
 .upper .button .divForUp {
   display: block;
+}
+/* для работы капслока */
+.caps .button.capslock .divForUp {
+  display: block;
+}
+
+.caps .button.capslock .divForDown {
+  display: none;
 }
 
 .letterDownRu {
