@@ -1,4 +1,4 @@
-let letters = [
+const letters = [
   {
     en: {
       letterUp: '~',
@@ -11,7 +11,7 @@ let letters = [
       capslock: true,
     },
     code: 'IntlBackslash',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -25,7 +25,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit1',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -39,7 +39,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit2',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -53,7 +53,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit3',
-    width: '45px'
+    width: '45px',
   },
 
   {
@@ -68,7 +68,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit4',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -82,7 +82,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit5',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -96,7 +96,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit6',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -110,7 +110,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit7',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -124,7 +124,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit8',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -138,7 +138,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit9',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -152,7 +152,7 @@ let letters = [
       capslock: false,
     },
     code: 'Digit0',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -166,7 +166,7 @@ let letters = [
       capslock: false,
     },
     code: 'Minus',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -180,7 +180,7 @@ let letters = [
       capslock: false,
     },
     code: 'Equal',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -194,7 +194,7 @@ let letters = [
       capslock: false,
     },
     code: 'Backspace',
-    width: '87px'
+    width: '87px',
   },
   {
     en: {
@@ -208,7 +208,7 @@ let letters = [
       capslock: false,
     },
     code: 'Tab',
-    width: '87px'
+    width: '87px',
   },
   {
     en: {
@@ -222,7 +222,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyQ',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -236,7 +236,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyW',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -264,7 +264,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyR',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -278,7 +278,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyT',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -292,7 +292,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyY',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -306,7 +306,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyU',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -320,7 +320,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyI',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -334,7 +334,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyO',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -348,7 +348,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyP',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -362,7 +362,7 @@ let letters = [
       capslock: true,
     },
     code: 'BracketLeft',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -376,7 +376,7 @@ let letters = [
       capslock: true,
     },
     code: 'BracketRight',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -390,7 +390,7 @@ let letters = [
       capslock: false,
     },
     code: 'Backslash',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -404,7 +404,7 @@ let letters = [
       capslock: false,
     },
     code: 'CapsLock',
-    width: '92px'
+    width: '92px',
   },
   {
     en: {
@@ -418,7 +418,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyA',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -432,7 +432,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyS',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -446,7 +446,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyD',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -460,7 +460,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyF',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -474,7 +474,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyG',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -488,7 +488,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyH',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -502,7 +502,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyJ',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -516,7 +516,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyK',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -530,7 +530,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyL',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -544,7 +544,7 @@ let letters = [
       capslock: true,
     },
     code: 'Semicolon',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -558,7 +558,7 @@ let letters = [
       capslock: true,
     },
     code: 'Quote',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -572,7 +572,7 @@ let letters = [
       capslock: false,
     },
     code: 'Enter',
-    width: '91px'
+    width: '91px',
   },
   {
     en: {
@@ -586,7 +586,7 @@ let letters = [
       capslock: false,
     },
     code: 'ShiftLeft',
-    width: '143px'
+    width: '143px',
   },
   {
     en: {
@@ -600,7 +600,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyZ',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -614,7 +614,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyX',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -624,11 +624,11 @@ let letters = [
     },
     ru: {
       letterUp: 'С',
-     letterDown: 'с',
-     capslock: true,
+      letterDown: 'с',
+      capslock: true,
     },
     code: 'KeyC',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -642,7 +642,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyV',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -656,7 +656,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyB',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -670,7 +670,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyN',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -684,7 +684,7 @@ let letters = [
       capslock: true,
     },
     code: 'KeyM',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -698,7 +698,7 @@ let letters = [
       capslock: true,
     },
     code: 'Comma',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -712,7 +712,7 @@ let letters = [
       capslock: true,
     },
     code: 'Period',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -726,7 +726,7 @@ let letters = [
       capslock: false,
     },
     code: 'Slash',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -740,7 +740,7 @@ let letters = [
       capslock: false,
     },
     code: 'ArrowUp',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -754,7 +754,7 @@ let letters = [
       capslock: false,
     },
     code: 'ShiftRight',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -768,7 +768,7 @@ let letters = [
       capslock: false,
     },
     code: 'ControlLeft',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -782,7 +782,7 @@ let letters = [
       capslock: false,
     },
     code: 'AltLeft',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -796,7 +796,7 @@ let letters = [
       capslock: false,
     },
     code: 'MetaLeft',
-    width: '65px'
+    width: '65px',
   },
   {
     en: {
@@ -810,7 +810,7 @@ let letters = [
       capslock: false,
     },
     code: 'Space',
-    width: '304px'
+    width: '304px',
   },
   {
     en: {
@@ -824,7 +824,7 @@ let letters = [
       capslock: false,
     },
     code: 'MetaRight',
-    width: '65px'
+    width: '65px',
   },
   {
     en: {
@@ -838,7 +838,7 @@ let letters = [
       capslock: false,
     },
     code: 'AltRight',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -852,7 +852,7 @@ let letters = [
       capslock: false,
     },
     code: 'ArrowLeft',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -866,7 +866,7 @@ let letters = [
       capslock: false,
     },
     code: 'ArrowDown',
-    width: '45px'
+    width: '45px',
   },
   {
     en: {
@@ -880,12 +880,8 @@ let letters = [
       capslock: false,
     },
     code: 'ArrowRight',
-    width: '45px'
+    width: '45px',
   },
 ];
 
 export default letters
-
-
-
-

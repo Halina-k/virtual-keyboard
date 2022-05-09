@@ -27,8 +27,7 @@ const KeyboardState = {
 
   isCapsEnabled() {
     return this.currentState.CapsLock === true
-  }
+  },
 };
-
 
 export default KeyboardState;

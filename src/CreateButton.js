@@ -1,13 +1,12 @@
 function createButton(configBtn, currentLang) {
-
-  let letterTitles = configBtn[currentLang];
+  const letterTitles = configBtn[currentLang];
 
   const div = document.createElement('div');
   div.className = 'button'
   div.style.width = configBtn.width;
   div.id = configBtn.code
   if (letterTitles.capslock === true) {
-    div.classList.add("capslock")
+    div.classList.add('capslock')
   }
 
   const divForUp = document.createElement('div');
